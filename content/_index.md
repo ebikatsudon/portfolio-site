@@ -9,7 +9,7 @@ text_align_left: false
 show_post_date: false
 show_social_links: true # specify social accounts in site config
 show_action_link: true
-action_link: /collection
+action_link: collection
 action_label: "View Writing Samples &rarr;"
 action_type: text # text, button
 type: home
