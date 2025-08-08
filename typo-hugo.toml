@@ -1,0 +1,66 @@
+baseURL = 'https://example.org/'
+languageCode = 'en-us'
+title = ''
+theme = 'typo'
+
+[params]
+# Meta description
+description = "A Tech Blog"
+
+# Appearance settings
+theme = 'auto'
+colorPalette = 'default'
+hideHeader = false
+
+# Intro on main page, content is markdown
+homeIntroTitle = 'Hi there!'
+homeIntroContent = """
+I'm a writer and editor with a background in market research and content development. I love learning new things and helping others learn by figuring out how to communicate information in easy-to-understand ways.
+
+Recently I've been channeling that experience and passion into a growing interest in technical writing and scientific communication. I’m currently building my portfolio and looking for opportunities to contribute to tech-focused projects where clear, well-written documentation makes a real impact.
+
+You can learn more about me [here](/resume), or view some of the projects I've contributed to [here](/projects).
+"""
+
+# Collection to display on home - UNCOMMENT THIS TO SHOW COLLECTIONS
+# homeCollectionTitle = 'Posts'
+# homeCollection = 'posts'
+
+# Lists parameters
+paginationSize = 100
+listSummaries = false
+listDateFormat = '2 Jan 2006'
+
+# Breadcrumbs
+[params.breadcrumbs]
+enabled = true
+showCurrentPage = true
+home = "~"
+
+# Social icons
+[[params.social]]
+name = "linkedin"
+url = "https://www.linkedin.com/in/user/"
+
+[[params.social]]
+name = "github"
+url = "https://github.com/ebikatsudon"
+
+# Main menu pages
+
+[[params.menu]]
+name = "about"
+url = "/"
+
+[[params.menu]]
+name = "resume"
+url = "/resume"
+
+[[params.menu]]
+name = "projects"
+url = "/projects"
+
+# Syntax highlight on code blocks
+[markup]
+[markup.highlight]
+style = 'algol'
