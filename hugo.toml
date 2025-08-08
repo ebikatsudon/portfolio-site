@@ -33,8 +33,8 @@ enableEmoji = true
   orgName = "RStudio"
   orgLocal = "Anywhere"
   description = "A modern, beautiful, and easily configurable blog theme for Hugo."
-  favicon = "/static/img/mug.png"
-  logo = "/static/img/mug.png"
+  favicon = "/img/mug.png"
+  logo = "/img/mug.png"
   mainSections = ["blog", "project", "talk"]
   navallcaps = true
   # show/hide social icons in site header & footer
