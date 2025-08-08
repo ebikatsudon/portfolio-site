@@ -9,6 +9,6 @@ headline: |
 <!-- this is a subheadline -->
 I’m a writer and editor with a background in market research and content development, looking to jump into the world of technical writing. I’m currently building my portfolio and seeking opportunities to contribute to tech-focused projects where clear, well-written documentation makes a real impact.
 
-To view a summary of my professional career, [click here](resume/).
+To view a summary of my professional career, [click here]({{< relref "resume.md" >}}).
 
-To browse some writing samples and cool things I've done, [click here](collection/).
+To browse some writing samples and cool things I've done, [click here]({{< relref "collection/_index.md" >}}).

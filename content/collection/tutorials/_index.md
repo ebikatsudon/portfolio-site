@@ -2,7 +2,7 @@
 title: "Tutorials"
 # list or single layouts are possible
 layout: list-sidebar # list, list-sidebar, single-series
-weight: 3
+weight: 4
 publishDate: 2021-01-22
 date: 2021-01-25
 excerpt: "if i put something here what happens"
