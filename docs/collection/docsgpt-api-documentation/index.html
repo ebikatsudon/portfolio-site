@@ -1,0 +1,1151 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr"><head>
+  
+                           
+     
+
+
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="generator" content="Hugo 0.142.0">
+<title>API Documentation for DocsGPT | Hugo Apéro</title>
+
+
+
+
+
+
+
+
+  
+    
+  
+<meta name="description" content="API endpoint documentation for the open-source genAI tool DocsGPT.">
+
+
+<meta property="og:site_name" content="Hugo Apéro">
+<meta property="og:title" content="API Documentation for DocsGPT | Hugo Apéro">
+<meta property="og:description" content="API endpoint documentation for the open-source genAI tool DocsGPT." />
+<meta property="og:type" content="page" />
+<meta property="og:url" content="https://ebikatsudon.github.io/portfolio-site/collection/docsgpt-api-documentation/" />
+<meta property="og:locale" content="en">
+
+
+
+
+    
+        <meta property="og:image" content="https://ebikatsudon.github.io/portfolio-site/collection/featured-sidebar.jpg" >
+        <meta property="twitter:card" content="summary_large_image">
+        <meta name="twitter:image" content="https://ebikatsudon.github.io/portfolio-site/collection/featured-sidebar.jpg" >
+    
+    
+  
+  <meta itemprop="name" content="API Documentation for DocsGPT">
+  <meta itemprop="description" content="DocsGPT is a generative AI tool that helps users find, retrieve, and summarize information from uploaded knowledge sources. Learn more about DocsGPT here.
+The base URL for all API paths is http://localhost.7901/.
+Currently, the application provides the following endpoints:
+1. POST /api/answerResponds with answers to user-provided questions.">
+  <meta itemprop="wordCount" content="1312">
+  
+  <!--[if IE]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  <link rel="shortcut icon" href="img/mug.png" type="image/x-icon">
+  <link rel="icon" href="img/mug.png" type="image/x-icon">
+  
+  
+  <link rel="stylesheet" href="/portfolio-site/style.main.min.5bc05268bf426e28545def1e51ad2af5601118dc08c50cb4c3c0416b2000b9e4.css" integrity="sha256-W8BSaL9CbihUXe8eUa0q9WARGNwIxQy0w8BBayAAueQ=" media="screen">
+  
+  
+  <script src="/portfolio-site/panelset.min.ed1ac24b6e16f4e2481e3d1d098ae66f5bc77438aef619e6e266d8ac5b00dc72.js" type="text/javascript"></script>
+  
+  
+  <script src="/portfolio-site/main.min.c55a19af97bba5c44ffdc48b9f69d7b373eb9692c2acc5253108c6aaa3f600d6.js" type="text/javascript"></script>
+</head>
+<body>
+      <div class="grid-container single-series">
+<header class="site-header pt4 pb2 mb4 bb b--transparent ph5 headroom z-max" role="banner">
+  <nav class="site-nav db dt-l w-100" role="navigation">
+    <a class="site-brand db dtc-l v-mid link no-underline w-100 w-33-l tc tl-l" href="https://ebikatsudon.github.io/portfolio-site/" title="Home">
+      <img src="/portfolio-site/img/mug.png" class="dib db-l h2 w-auto" alt="Hugo Apéro">
+    </a>
+    <div class="site-links db dtc-l v-mid w-100 w-47-l tc tr-l mt3 mt0-l ttu tracked">
+      
+        
+        
+        
+      <a class="link f6 f5-l dib pv1 ph2 " href="/portfolio-site/about/" title="About Me">About</a>
+      
+        
+        
+        
+      <a class="link f6 f5-l dib pv1 ph2 " href="/portfolio-site/collection/" title="Project Portfolio">Projects</a>
+      
+        
+        
+        
+      <a class="link f6 f5-l dib pv1 ph2 " href="/portfolio-site/resume/" title="Resume">Resume</a>
+      
+      
+    </div>
+  </nav>
+</header>
+
+
+<main class="page-main ph4 pt4" role="main">
+  <section class="page-content mw7 center">
+    <article class="post-content pa0 pr3-l">
+      <header class="post-header">
+        <h4 class="breadcrumb pb5">
+
+  
+    
+      
+  
+    
+      
+  
+
+    
+    
+      <a href="/portfolio-site/collection/">Projects &amp; Writing Samples</a>
+       >
+    
+  
+
+    
+    
+      API Documentation for DocsGPT
+    
+  
+
+</h4>
+
+
+
+
+        
+        <h1 class="f1 lh-solid measure-narrow mb3 fw4">API Documentation for DocsGPT</h1>
+        
+        
+        
+        
+        
+      
+        
+      </header>
+      <section class="post-body pt5 pb4">
+        <p>DocsGPT is a generative AI tool that helps users find, retrieve, and summarize information from uploaded knowledge sources. 
+<a href="https://github.com/arc53/DocsGPT" target="_blank" rel="noopener">Learn more about DocsGPT here.</a></p>
+<hr>
+<p>The base URL for all API paths is <code>http://localhost.7901/</code>.</p>
+<p>Currently, the application provides the following endpoints:</p>
+
+
+
+
+<h2 id="1-post-apianswer">1. POST /api/answer
+  <a href="#1-post-apianswer"><svg class="anchor-symbol" aria-hidden="true" height="26" width="26" viewBox="0 0 22 22" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0 0h24v24H0z" fill="currentColor"></path>
+      <path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"></path>
+    </svg></a>
+</h2>
+<p>Responds with answers to user-provided questions.</p>
+<p><strong>Headers</strong>:</p>
+<pre tabindex="0"><code class="language-curl" data-lang="curl">curl -H &#34;Content-Type: application/json; charset=utf-8&#34;
+</code></pre><p><strong>Sample JSON Request Body</strong>:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span><span style="color:#1f2328">{</span>
+</span></span><span style="display:flex;"><span> <span style="color:#0550ae">&#34;question&#34;</span><span style="color:#1f2328">:</span> <span style="color:#0a3069">&#34;Summarize current context&#34;</span><span style="color:#1f2328">,</span>
+</span></span><span style="display:flex;"><span> <span style="color:#0550ae">&#34;api_key&#34;</span><span style="color:#1f2328">:</span> <span style="color:#0a3069">&#34;OPENAI_API_KEY&#34;</span><span style="color:#1f2328">,</span>
+</span></span><span style="display:flex;"><span> <span style="color:#0550ae">&#34;embeddings_key&#34;</span><span style="color:#1f2328">:</span>  <span style="color:#0a3069">&#34;OPENAI_API_KEY&#34;</span><span style="color:#1f2328">,</span>
+</span></span><span style="display:flex;"><span> <span style="color:#0550ae">&#34;active_docs&#34;</span><span style="color:#1f2328">:</span> <span style="color:#0a3069">&#34;67088ee3d14d6f75727f218c&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#1f2328">}</span>
+</span></span></code></pre></div><table>
+  <thead>
+      <tr>
+          <th>Key</th>
+          <th>Data Type</th>
+          <th>Description</th>
+          <th>Use</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>question</td>
+          <td>string</td>
+          <td>The user&rsquo;s question.</td>
+          <td>Required</td>
+      </tr>
+      <tr>
+          <td>history</td>
+          <td>string</td>
+          <td>The conversation history.</td>
+          <td>Optional</td>
+      </tr>
+      <tr>
+          <td>api_key</td>
+          <td>string</td>
+          <td>The API key for the selected LLM model.</td>
+          <td>Optional</td>
+      </tr>
+      <tr>
+          <td>embeddings_key</td>
+          <td>string</td>
+          <td>The API key for embeddings. If using OpenaAI, use the api_key value.</td>
+          <td>Optional</td>
+      </tr>
+      <tr>
+          <td>active_docs</td>
+          <td>string</td>
+          <td>The ID of the active documentation.</td>
+          <td>Optional</td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>Sample Request</strong>:</p>
+<pre tabindex="0"><code class="language-curl" data-lang="curl">curl --location &#39;http://localhost:7091/api/answer&#39; \
+--header &#39;Content-Type: application/json; charset=utf-8&#39; \
+--data &#39;{
+    &#34;question&#34;: &#34;Hi&#34;,
+    &#34;active_docs&#34;: &#34;67088ee3d14d6f75727f218c&#34;
+}&#39;
+</code></pre><p><strong>Sample JSON Response</strong>:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span><span style="color:#1f2328">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#0550ae">&#34;answer&#34;</span><span style="color:#1f2328">:</span> <span style="color:#0a3069">&#34;Hello! How can I assist you today? If you have any questions or need help with something specific, feel free to ask!&#34;</span><span style="color:#1f2328">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#0550ae">&#34;conversation_id&#34;</span><span style="color:#1f2328">:</span> <span style="color:#0a3069">&#34;67196c4fb25c8573993bab33&#34;</span><span style="color:#1f2328">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#0550ae">&#34;sources&#34;</span><span style="color:#1f2328">:</span> <span style="color:#1f2328">[</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#1f2328">{</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#0550ae">&#34;source&#34;</span><span style="color:#1f2328">:</span> <span style="color:#0a3069">&#34;https://docs.docsgpt.cloud/API/API-docs&#34;</span><span style="color:#1f2328">,</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#0550ae">&#34;text&#34;</span><span style="color:#1f2328">:</span> <span style="color:#0a3069">&#34;API Endpoints Documentation - DocsGPT Documentation Welcome to the new DocsGPT&#34;</span><span style="color:#1f2328">,</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#0550ae">&#34;title&#34;</span><span style="color:#1f2328">:</span> <span style="color:#0a3069">&#34;API Endpoints Documentation - DocsGPT Documentation&#34;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#1f2328">}</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#1f2328">]</span>
+</span></span><span style="display:flex;"><span><span style="color:#1f2328">}</span>
+</span></span></code></pre></div>
+
+
+
+<h2 id="2-post-apidocs_check">2. POST /api/docs_check
+  <a href="#2-post-apidocs_check"><svg class="anchor-symbol" aria-hidden="true" height="26" width="26" viewBox="0 0 22 22" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0 0h24v24H0z" fill="currentColor"></path>
+      <path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"></path>
+    </svg></a>
+</h2>
+<p>Checks if documentation is loaded on the server. Should be run every time the user is switching between documentation sources.</p>
+<p><strong>Headers</strong>:</p>
+<pre tabindex="0"><code class="language-curl" data-lang="curl">curl -H &#34;Content-Type: application/json; charset=utf-8&#34;
+</code></pre><p><strong>Sample JSON Request Body</strong>:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span><span style="color:#1f2328">{</span>
+</span></span><span style="display:flex;"><span> <span style="color:#0550ae">&#34;docs&#34;</span><span style="color:#1f2328">:</span> <span style="color:#0a3069">&#34;default&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#1f2328">}</span>
+</span></span></code></pre></div><table>
+  <thead>
+      <tr>
+          <th>Key</th>
+          <th>Data Type</th>
+          <th>Description</th>
+          <th>Use</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>docs</td>
+          <td>string</td>
+          <td>The location of the documentation.</td>
+          <td>Required</td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>Sample Request</strong>:</p>
+<pre tabindex="0"><code class="language-curl" data-lang="curl">curl --location &#39;http://localhost:7091/api/docs_check&#39; \
+--header &#39;Content-Type: application/json&#39; \
+--data &#39;{
+&#34;docs&#34;: &#34;default&#34;
+}&#39;
+</code></pre><p><strong>Sample JSON Response</strong>:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span><span style="color:#1f2328">{</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#0550ae">&#34;status&#34;</span><span style="color:#1f2328">:</span> <span style="color:#0a3069">&#34;exists&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#1f2328">}</span>
+</span></span></code></pre></div>
+
+
+
+<h2 id="3-get-apicombine">3. GET /api/combine
+  <a href="#3-get-apicombine"><svg class="anchor-symbol" aria-hidden="true" height="26" width="26" viewBox="0 0 22 22" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0 0h24v24H0z" fill="currentColor"></path>
+      <path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"></path>
+    </svg></a>
+</h2>
+<p>Retrieves information about available vector databases.</p>
+<p><strong>Sample Request</strong></p>
+<pre tabindex="0"><code class="language-curl" data-lang="curl">curl --location &#39;http://localhost:7091/api/combine&#39;
+</code></pre><p><strong>Sample JSON Response:</strong></p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span><span style="color:#1f2328">[</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#1f2328">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#0550ae">&#34;date&#34;</span><span style="color:#1f2328">:</span> <span style="color:#0a3069">&#34;default&#34;</span><span style="color:#1f2328">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#0550ae">&#34;location&#34;</span><span style="color:#1f2328">:</span> <span style="color:#0a3069">&#34;remote&#34;</span><span style="color:#1f2328">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#0550ae">&#34;model&#34;</span><span style="color:#1f2328">:</span> <span style="color:#0a3069">&#34;huggingface_sentence-transformers/all-mpnet-base-v2&#34;</span><span style="color:#1f2328">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#0550ae">&#34;name&#34;</span><span style="color:#1f2328">:</span> <span style="color:#0a3069">&#34;default&#34;</span><span style="color:#1f2328">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#0550ae">&#34;retriever&#34;</span><span style="color:#1f2328">:</span> <span style="color:#0a3069">&#34;classic&#34;</span><span style="color:#1f2328">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#0550ae">&#34;tokens&#34;</span><span style="color:#1f2328">:</span> <span style="color:#0a3069">&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#1f2328">},</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#1f2328">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#0550ae">&#34;date&#34;</span><span style="color:#1f2328">:</span> <span style="color:#0a3069">&#34;Wed, 31 Jan 2024 12:00:00 GMT&#34;</span><span style="color:#1f2328">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#0550ae">&#34;id&#34;</span><span style="color:#1f2328">:</span> <span style="color:#0a3069">&#34;67088ee3d14d6f75727f218c&#34;</span><span style="color:#1f2328">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#0550ae">&#34;location&#34;</span><span style="color:#1f2328">:</span> <span style="color:#0a3069">&#34;local&#34;</span><span style="color:#1f2328">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#0550ae">&#34;model&#34;</span><span style="color:#1f2328">:</span> <span style="color:#0a3069">&#34;huggingface_sentence-transformers/all-mpnet-base-v2&#34;</span><span style="color:#1f2328">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#0550ae">&#34;name&#34;</span><span style="color:#1f2328">:</span> <span style="color:#0a3069">&#34;API-docs.md&#34;</span><span style="color:#1f2328">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#0550ae">&#34;retriever&#34;</span><span style="color:#1f2328">:</span> <span style="color:#0a3069">&#34;classic&#34;</span><span style="color:#1f2328">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#0550ae">&#34;syncFrequency&#34;</span><span style="color:#1f2328">:</span> <span style="color:#cf222e">null</span><span style="color:#1f2328">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#0550ae">&#34;tokens&#34;</span><span style="color:#1f2328">:</span> <span style="color:#0a3069">&#34;2030&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#1f2328">},</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#1f2328">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#0550ae">&#34;date&#34;</span><span style="color:#1f2328">:</span> <span style="color:#0a3069">&#34;duckduck_search&#34;</span><span style="color:#1f2328">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#0550ae">&#34;location&#34;</span><span style="color:#1f2328">:</span> <span style="color:#0a3069">&#34;custom&#34;</span><span style="color:#1f2328">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#0550ae">&#34;model&#34;</span><span style="color:#1f2328">:</span> <span style="color:#0a3069">&#34;huggingface_sentence-transformers/all-mpnet-base-v2&#34;</span><span style="color:#1f2328">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#0550ae">&#34;name&#34;</span><span style="color:#1f2328">:</span> <span style="color:#0a3069">&#34;DuckDuckGo Search&#34;</span><span style="color:#1f2328">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#0550ae">&#34;retriever&#34;</span><span style="color:#1f2328">:</span> <span style="color:#0a3069">&#34;duckduck_search&#34;</span><span style="color:#1f2328">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#0550ae">&#34;tokens&#34;</span><span style="color:#1f2328">:</span> <span style="color:#0a3069">&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#1f2328">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#1f2328">]</span>
+</span></span></code></pre></div><table>
+  <thead>
+      <tr>
+          <th>Key</th>
+          <th>Data Type</th>
+          <th>Description</th>
+          <th>Use</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>date</td>
+          <td>string</td>
+          <td>When the document was uploaded.</td>
+          <td>Required</td>
+      </tr>
+      <tr>
+          <td>id</td>
+          <td>string</td>
+          <td>The ID of the uploaded document.</td>
+          <td>Optional</td>
+      </tr>
+      <tr>
+          <td>location</td>
+          <td>string</td>
+          <td>Where the document is stored.</td>
+          <td>Required</td>
+      </tr>
+      <tr>
+          <td>model</td>
+          <td>string</td>
+          <td>The LLM model used for training the document.</td>
+          <td>Required</td>
+      </tr>
+      <tr>
+          <td>name</td>
+          <td>string</td>
+          <td>The name of the document.</td>
+          <td>Required</td>
+      </tr>
+      <tr>
+          <td>retriever</td>
+          <td>string</td>
+          <td>The retriever used to return the document.</td>
+          <td>Required</td>
+      </tr>
+      <tr>
+          <td>syncFrequency</td>
+          <td>string</td>
+          <td>How often the document is synced with the origin. Can be never, daily, weekly, monthly, or null.</td>
+          <td>Optional</td>
+      </tr>
+      <tr>
+          <td>tokens</td>
+          <td>string</td>
+          <td>Number of tokens used by the document.</td>
+          <td>Required</td>
+      </tr>
+  </tbody>
+</table>
+<p>The JSON response values can also be viewed on 
+<a href="https://github.com/arc53/DocsHUB" target="_blank" rel="noopener">DocsHUB</a>, if the documentation is stored there.</p>
+<img width="295" alt="image" src="https://user-images.githubusercontent.com/15183589/224714085-f09f51a4-7a9a-4efb-bd39-798029bb4273.png">
+<p>On DocsHub, additional metadata fields include:</p>
+<table>
+  <thead>
+      <tr>
+          <th>Key</th>
+          <th>Data Type</th>
+          <th>Description</th>
+          <th>Use</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>description</td>
+          <td>string</td>
+          <td>A description of the document&rsquo;s contents.</td>
+          <td>Required</td>
+      </tr>
+      <tr>
+          <td>docLink</td>
+          <td>string</td>
+          <td>The path to the document.</td>
+          <td>Optional</td>
+      </tr>
+      <tr>
+          <td>fullName</td>
+          <td>string</td>
+          <td>The document&rsquo;s full name.</td>
+          <td>Required</td>
+      </tr>
+      <tr>
+          <td>language</td>
+          <td>string</td>
+          <td>The coding language used in the document.</td>
+          <td>Required</td>
+      </tr>
+      <tr>
+          <td>version</td>
+          <td>string</td>
+          <td>The document version.</td>
+          <td>Optional</td>
+      </tr>
+  </tbody>
+</table>
+
+
+
+
+<h2 id="4-post-apiupload">4. POST /api/upload
+  <a href="#4-post-apiupload"><svg class="anchor-symbol" aria-hidden="true" height="26" width="26" viewBox="0 0 22 22" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0 0h24v24H0z" fill="currentColor"></path>
+      <path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"></path>
+    </svg></a>
+</h2>
+<p>Uploads a file to be vectorized and indexed.</p>
+<p><strong>Request Body</strong>: A multipart/form-data object with the following fields:</p>
+<ul>
+<li><code>file</code>: The file to be uploaded from local device</li>
+<li><code>user</code>: The source of the upload</li>
+<li><code>name</code>: The user-designated file name</li>
+</ul>
+<p><strong>Sample Request</strong>:</p>
+<pre tabindex="0"><code class="language-curl" data-lang="curl">curl --location &#39;http://localhost:7091/api/upload&#39; \
+--form &#39;file=@&#34;YOUR-FILE-PATH&#34;&#39; \
+--form &#39;user=&#34;local&#34;&#39; \
+--form &#39;name=&#34;Name&#34;&#39;
+</code></pre><p><strong>Sample JSON Response:</strong></p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span><span style="color:#1f2328">{</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#0550ae">&#34;success&#34;</span><span style="color:#1f2328">:</span> <span style="color:#cf222e">true</span><span style="color:#1f2328">,</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#0550ae">&#34;task_id&#34;</span><span style="color:#1f2328">:</span> <span style="color:#0a3069">&#34;cef0a8f8-22a3-452f-bf7b-29d181c83ad9&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#1f2328">}</span>
+</span></span></code></pre></div><table>
+  <thead>
+      <tr>
+          <th>Key</th>
+          <th>Data Type</th>
+          <th>Description</th>
+          <th>Use</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>success</td>
+          <td>boolean</td>
+          <td>Indicates whether the upload was successful.</td>
+          <td>Required</td>
+      </tr>
+      <tr>
+          <td>task_id</td>
+          <td>string</td>
+          <td>The ID of the uploaded document.</td>
+          <td>Required</td>
+      </tr>
+  </tbody>
+</table>
+
+
+
+
+<h2 id="5-get-apitask_status">5. GET /api/task_status
+  <a href="#5-get-apitask_status"><svg class="anchor-symbol" aria-hidden="true" height="26" width="26" viewBox="0 0 22 22" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0 0h24v24H0z" fill="currentColor"></path>
+      <path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"></path>
+    </svg></a>
+</h2>
+<p>Returns the status of a file upload with designated <code>task_id</code> from <code>/api/upload</code>.</p>
+<p><strong>Query Parameter</strong>:</p>
+<table>
+  <thead>
+      <tr>
+          <th>Key</th>
+          <th>Data Type</th>
+          <th>Description</th>
+          <th>Use</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>task_id</td>
+          <td>string</td>
+          <td>The ID of the task.</td>
+          <td>Required</td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>Sample Request:</strong></p>
+<pre tabindex="0"><code class="language-curl" data-lang="curl">curl --location &#39;http://localhost:7091/api/task_status?task_id=YOUR_TASK_ID&#39;
+</code></pre><p><strong>Response:</strong></p>
+<p>There are two types of responses:</p>
+<ol>
+<li>
+<p>When the task is running, returns a <code>PROGRESS</code> value for <code>status</code> and a <code>current</code> value showing progress from 0 to 100:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span><span style="color:#1f2328">{</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#0550ae">&#34;result&#34;</span><span style="color:#1f2328">:</span> <span style="color:#1f2328">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#0550ae">&#34;current&#34;</span><span style="color:#1f2328">:</span> <span style="color:#0550ae">1</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#1f2328">},</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#0550ae">&#34;status&#34;</span><span style="color:#1f2328">:</span> <span style="color:#0a3069">&#34;PROGRESS&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#1f2328">}</span>
+</span></span></code></pre></div></li>
+<li>
+<p>When the task is complete, returns <code>SUCCESS</code> for <code>status</code>:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span><span style="color:#1f2328">{</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#0550ae">&#34;result&#34;</span><span style="color:#1f2328">:</span> <span style="color:#1f2328">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#0550ae">&#34;directory&#34;</span><span style="color:#1f2328">:</span> <span style="color:#0a3069">&#34;inputs&#34;</span><span style="color:#1f2328">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#0550ae">&#34;filename&#34;</span><span style="color:#1f2328">:</span> <span style="color:#0a3069">&#34;API-docs.md&#34;</span><span style="color:#1f2328">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#0550ae">&#34;formats&#34;</span><span style="color:#1f2328">:</span> <span style="color:#1f2328">[</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#0a3069">&#34;.rst&#34;</span><span style="color:#1f2328">,</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#0a3069">&#34;.md&#34;</span><span style="color:#1f2328">,</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#0a3069">&#34;.pdf&#34;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#0a3069">&#34;.txt&#34;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#0a3069">&#34;.docx&#34;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#0a3069">&#34;.csv&#34;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#0a3069">&#34;.epub&#34;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#0a3069">&#34;.html&#34;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#0a3069">&#34;.mdx&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#1f2328">],</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#0550ae">&#34;limited&#34;</span><span style="color:#1f2328">:</span> <span style="color:#cf222e">false</span><span style="color:#1f2328">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#0550ae">&#34;name_job&#34;</span><span style="color:#1f2328">:</span> <span style="color:#0a3069">&#34;API-docs&#34;</span><span style="color:#1f2328">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#0550ae">&#34;user&#34;</span><span style="color:#1f2328">:</span> <span style="color:#0a3069">&#34;local&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#1f2328">},</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#0550ae">&#34;status&#34;</span><span style="color:#1f2328">:</span> <span style="color:#0a3069">&#34;SUCCESS&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#1f2328">}</span>
+</span></span></code></pre></div></li>
+</ol>
+<p><strong>Error Messages</strong></p>
+<p>If <code>task_id</code> is not provided, returns an error.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span><span style="color:#1f2328">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#0550ae">&#34;message&#34;</span><span style="color:#1f2328">:</span> <span style="color:#0a3069">&#34;Task ID is required&#34;</span><span style="color:#1f2328">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#0550ae">&#34;success&#34;</span><span style="color:#1f2328">:</span> <span style="color:#cf222e">false</span>
+</span></span><span style="display:flex;"><span><span style="color:#1f2328">}</span>
+</span></span></code></pre></div>
+
+
+
+<h2 id="6-get-apidelete_old">6. GET /api/delete_old
+  <a href="#6-get-apidelete_old"><svg class="anchor-symbol" aria-hidden="true" height="26" width="26" viewBox="0 0 22 22" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0 0h24v24H0z" fill="currentColor"></path>
+      <path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"></path>
+    </svg></a>
+</h2>
+<p>Deletes old indexes.</p>
+<p><strong>Query Parameter</strong>:</p>
+<table>
+  <thead>
+      <tr>
+          <th>Key</th>
+          <th>Data Type</th>
+          <th>Description</th>
+          <th>Use</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>source_id</td>
+          <td>string</td>
+          <td>The source ID of the document to be deleted.</td>
+          <td>Required</td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>Sample Request:</strong></p>
+<pre tabindex="0"><code class="language-curl" data-lang="curl">curl --location &#39;http://localhost:7091/api/delete_old?source_id=0c8382a8-e544-4f75-b28c-037500417a7a&#39;
+</code></pre><p><strong>Sample JSON Response:</strong></p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span><span style="color:#1f2328">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#0550ae">&#34;success&#34;</span><span style="color:#1f2328">:</span> <span style="color:#cf222e">true</span>
+</span></span><span style="display:flex;"><span><span style="color:#1f2328">}</span>
+</span></span></code></pre></div>
+
+
+
+<h2 id="7-get-apiget_api_keys">7. GET /api/get_api_keys
+  <a href="#7-get-apiget_api_keys"><svg class="anchor-symbol" aria-hidden="true" height="26" width="26" viewBox="0 0 22 22" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0 0h24v24H0z" fill="currentColor"></path>
+      <path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"></path>
+    </svg></a>
+</h2>
+<p>Retrieves a list of API keys for the user.</p>
+<p><strong>Sample Request:</strong></p>
+<pre tabindex="0"><code class="language-curl" data-lang="curl">curl --location &#39;http://localhost:7091/api/get_api_keys&#39;
+</code></pre><p><strong>Sample JSON Response:</strong></p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span><span style="color:#1f2328">[</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#1f2328">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#0550ae">&#34;chunks&#34;</span><span style="color:#1f2328">:</span> <span style="color:#0a3069">&#34;2&#34;</span><span style="color:#1f2328">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#0550ae">&#34;id&#34;</span><span style="color:#1f2328">:</span> <span style="color:#0a3069">&#34;670f41429e396d5266b1fea8&#34;</span><span style="color:#1f2328">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#0550ae">&#34;key&#34;</span><span style="color:#1f2328">:</span> <span style="color:#0a3069">&#34;API-KEY-1&#34;</span><span style="color:#1f2328">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#0550ae">&#34;name&#34;</span><span style="color:#1f2328">:</span> <span style="color:#0a3069">&#34;API-docs&#34;</span><span style="color:#1f2328">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#0550ae">&#34;prompt_id&#34;</span><span style="color:#1f2328">:</span> <span style="color:#0a3069">&#34;default&#34;</span><span style="color:#1f2328">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#0550ae">&#34;source&#34;</span><span style="color:#1f2328">:</span> <span style="color:#0a3069">&#34;API-docs&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#1f2328">},</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#1f2328">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#0550ae">&#34;chunks&#34;</span><span style="color:#1f2328">:</span> <span style="color:#0a3069">&#34;2&#34;</span><span style="color:#1f2328">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#0550ae">&#34;id&#34;</span><span style="color:#1f2328">:</span> <span style="color:#0a3069">&#34;670f424d2ad68e881af5258b&#34;</span><span style="color:#1f2328">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#0550ae">&#34;key&#34;</span><span style="color:#1f2328">:</span> <span style="color:#0a3069">&#34;API-KEY-1&#34;</span><span style="color:#1f2328">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#0550ae">&#34;name&#34;</span><span style="color:#1f2328">:</span> <span style="color:#0a3069">&#34;DuckDuckGo Search&#34;</span><span style="color:#1f2328">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#0550ae">&#34;prompt_id&#34;</span><span style="color:#1f2328">:</span> <span style="color:#0a3069">&#34;default&#34;</span><span style="color:#1f2328">,</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#0550ae">&#34;source&#34;</span><span style="color:#1f2328">:</span> <span style="color:#0a3069">&#34;default&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#1f2328">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#1f2328">]</span>
+</span></span></code></pre></div><table>
+  <thead>
+      <tr>
+          <th>Key</th>
+          <th>Data Type</th>
+          <th>Description</th>
+          <th>Use</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>chunks</td>
+          <td>string</td>
+          <td>The number of chunks used to process an answer.</td>
+          <td>Required</td>
+      </tr>
+      <tr>
+          <td>id</td>
+          <td>string</td>
+          <td>The string ID of the API key.</td>
+          <td>Required</td>
+      </tr>
+      <tr>
+          <td>key</td>
+          <td>string</td>
+          <td>The API key.</td>
+          <td>Required</td>
+      </tr>
+      <tr>
+          <td>name</td>
+          <td>string</td>
+          <td>The name of the API key.</td>
+          <td>Required</td>
+      </tr>
+      <tr>
+          <td>prompt_id</td>
+          <td>string</td>
+          <td>The prompt used to generate the API key. Values can be default, strict, or creative.</td>
+          <td>Required</td>
+      </tr>
+      <tr>
+          <td>source</td>
+          <td>string</td>
+          <td>The source document used to generate the API key.</td>
+          <td>Required</td>
+      </tr>
+  </tbody>
+</table>
+
+
+
+
+<h2 id="8-post-apicreate_api_key">8. POST /api/create_api_key
+  <a href="#8-post-apicreate_api_key"><svg class="anchor-symbol" aria-hidden="true" height="26" width="26" viewBox="0 0 22 22" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0 0h24v24H0z" fill="currentColor"></path>
+      <path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"></path>
+    </svg></a>
+</h2>
+<p>Creates a new API key for the user.</p>
+<p><strong>Headers</strong>:</p>
+<pre tabindex="0"><code class="language-curl" data-lang="curl">curl -H &#34;Content-Type: application/json; charset=utf-8&#34;
+</code></pre><p><strong>Sample JSON Request Body</strong>:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span><span style="color:#1f2328">{</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#0550ae">&#34;name&#34;</span><span style="color:#1f2328">:</span><span style="color:#0a3069">&#34;New Key&#34;</span><span style="color:#1f2328">,</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#0550ae">&#34;prompt_id&#34;</span><span style="color:#1f2328">:</span><span style="color:#0a3069">&#34;default&#34;</span><span style="color:#1f2328">,</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#0550ae">&#34;chunks&#34;</span><span style="color:#1f2328">:</span><span style="color:#0a3069">&#34;2&#34;</span><span style="color:#1f2328">,</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#0550ae">&#34;source&#34;</span><span style="color:#1f2328">:</span><span style="color:#0a3069">&#34;670f41429e396d5266b1fea8&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#1f2328">}</span>
+</span></span></code></pre></div><table>
+  <thead>
+      <tr>
+          <th>Key</th>
+          <th>Data Type</th>
+          <th>Description</th>
+          <th>Use</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>name</td>
+          <td>string</td>
+          <td>The user-designated name for the API key.</td>
+          <td>Required</td>
+      </tr>
+      <tr>
+          <td>prompt_id</td>
+          <td>string</td>
+          <td>The prompt used to generate the API key. Values can be default, strict, ore creative.</td>
+          <td>Required</td>
+      </tr>
+      <tr>
+          <td>chunks</td>
+          <td>string</td>
+          <td>The number of chunks used to process an answer.</td>
+          <td>Required</td>
+      </tr>
+      <tr>
+          <td>source</td>
+          <td>string</td>
+          <td>The source document used to generate the API key.</td>
+          <td>Required</td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>Sample Request</strong>:</p>
+<pre tabindex="0"><code class="language-curl" data-lang="curl">curl --location &#39;http://localhost:7091/api/create_api_key&#39; \
+--header &#39;Content-Type: application/json; charset=utf-8&#39; \
+--data &#39;{
+    &#34;name&#34;:&#34;test&#34;,
+    &#34;prompt_id&#34;:&#34;default&#34;,
+    &#34;chunks&#34;: &#34;2&#34;,
+    &#34;source&#34;: &#34;670f41429e396d5266b1fea8&#34;
+}&#39;
+</code></pre><p><strong>Sample JSON Response</strong>:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span><span style="color:#1f2328">{</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#0550ae">&#34;id&#34;</span><span style="color:#1f2328">:</span> <span style="color:#0a3069">&#34;670f46162ad68e881af5258e&#34;</span><span style="color:#1f2328">,</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#0550ae">&#34;key&#34;</span><span style="color:#1f2328">:</span> <span style="color:#0a3069">&#34;YOUR-API-KEY&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#1f2328">}</span>
+</span></span></code></pre></div>
+
+
+
+<h2 id="9-post-apidelete_api_key">9. POST /api/delete_api_key
+  <a href="#9-post-apidelete_api_key"><svg class="anchor-symbol" aria-hidden="true" height="26" width="26" viewBox="0 0 22 22" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0 0h24v24H0z" fill="currentColor"></path>
+      <path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"></path>
+    </svg></a>
+</h2>
+<p>Deletes a user&rsquo;s API key.</p>
+<p><strong>Headers</strong>:</p>
+<pre tabindex="0"><code class="language-curl" data-lang="curl">curl -H &#34;Content-Type: application/json; charset=utf-8&#34;
+</code></pre><p><strong>Request Body</strong>:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span><span style="color:#1f2328">{</span>
+</span></span><span style="display:flex;"><span> <span style="color:#0550ae">&#34;id&#34;</span><span style="color:#1f2328">:</span> <span style="color:#0a3069">&#34;YOUR-API-KEY&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#1f2328">}</span>
+</span></span></code></pre></div><table>
+  <thead>
+      <tr>
+          <th>Key</th>
+          <th>Data Type</th>
+          <th>Description</th>
+          <th>Use</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>id</td>
+          <td>string</td>
+          <td>The ID of the API key to be deleted</td>
+          <td>Required</td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>Sample Request</strong>:</p>
+<pre tabindex="0"><code class="language-curl" data-lang="curl">curl --location --request GET &#39;http://localhost:7091/api/delete_old?source_id=6721a21540fd2cb5b73c95ae&#39; \
+--header &#39;Content-Type: application/json; charset=utf-8&#39; \
+--data &#39;{
+    &#34;id&#34; : &#34;670f41429e396d5266b1fea8&#34;
+}&#39;
+</code></pre><p><strong>Sample JSON Response</strong>:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span><span style="color:#1f2328">{</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#0550ae">&#34;success&#34;</span><span style="color:#1f2328">:</span> <span style="color:#cf222e">true</span>
+</span></span><span style="display:flex;"><span><span style="color:#1f2328">}</span>
+</span></span></code></pre></div>
+
+
+
+<h2 id="10-get-apiget_conversations">10. GET /api/get_conversations
+  <a href="#10-get-apiget_conversations"><svg class="anchor-symbol" aria-hidden="true" height="26" width="26" viewBox="0 0 22 22" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0 0h24v24H0z" fill="currentColor"></path>
+      <path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"></path>
+    </svg></a>
+</h2>
+<p>Retrieves a list of the last 30 conversations with their IDs.</p>
+<p><strong>Sample Request</strong></p>
+<pre tabindex="0"><code class="language-curl" data-lang="curl">curl --location &#39;http://localhost:7091/api/get_conversations&#39;
+</code></pre><p><strong>Sample JSON Response</strong></p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span><span style="color:#1f2328">[</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#1f2328">{</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#0550ae">&#34;id&#34;</span><span style="color:#1f2328">:</span> <span style="color:#0a3069">&#34;67200f1e6126e888c4d2fe84&#34;</span><span style="color:#1f2328">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#0550ae">&#34;name&#34;</span><span style="color:#1f2328">:</span> <span style="color:#0a3069">&#34;\&#34;Beginning a conversation.\&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#1f2328">},</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#1f2328">{</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#0550ae">&#34;id&#34;</span><span style="color:#1f2328">:</span> <span style="color:#0a3069">&#34;67196c4fb25c8573993bab33&#34;</span><span style="color:#1f2328">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#0550ae">&#34;name&#34;</span><span style="color:#1f2328">:</span> <span style="color:#0a3069">&#34;Assistance offered.&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#1f2328">},</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#1f2328">{</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#0550ae">&#34;id&#34;</span><span style="color:#1f2328">:</span> <span style="color:#0a3069">&#34;67196bfcb25c8573993bab2f&#34;</span><span style="color:#1f2328">,</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#0550ae">&#34;name&#34;</span><span style="color:#1f2328">:</span> <span style="color:#0a3069">&#34;Prompt user engagement&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#1f2328">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#1f2328">]</span><span style="color:#f6f8fa;background-color:#82071e">`</span>
+</span></span></code></pre></div>
+
+
+
+<h2 id="11-post-apidelete_conversation">11. POST /api/delete_conversation
+  <a href="#11-post-apidelete_conversation"><svg class="anchor-symbol" aria-hidden="true" height="26" width="26" viewBox="0 0 22 22" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0 0h24v24H0z" fill="currentColor"></path>
+      <path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"></path>
+    </svg></a>
+</h2>
+<p>Deletes a conversation with the specified ID.</p>
+<p><strong>Query Parameter</strong>:</p>
+<table>
+  <thead>
+      <tr>
+          <th>Key</th>
+          <th>Data Type</th>
+          <th>Description</th>
+          <th>Use</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>id</td>
+          <td>string</td>
+          <td>ID of the conversation to be deleted.</td>
+          <td>Required</td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>Sample Request</strong></p>
+<pre tabindex="0"><code class="language-curl" data-lang="curl">curl --location --request POST &#39;http://localhost:7091/api/delete_conversation?id=670893ea22bbc7f1e1431960&#39;
+</code></pre><p><strong>Sample JSON Response</strong></p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span><span style="color:#1f2328">{</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#0550ae">&#34;success&#34;</span><span style="color:#1f2328">:</span> <span style="color:#cf222e">true</span>
+</span></span><span style="display:flex;"><span><span style="color:#1f2328">}</span>
+</span></span></code></pre></div>
+
+
+
+<h2 id="12-post-stream">12. POST /stream
+  <a href="#12-post-stream"><svg class="anchor-symbol" aria-hidden="true" height="26" width="26" viewBox="0 0 22 22" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0 0h24v24H0z" fill="currentColor"></path>
+      <path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"></path>
+    </svg></a>
+</h2>
+<p>Streams the LLM&rsquo;s response to a user&rsquo;s question based on the specified retriever.</p>
+<p><strong>Sample Request Body</strong></p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span><span style="color:#1f2328">{</span>
+</span></span><span style="display:flex;"><span><span style="color:#0550ae">&#34;active_docs&#34;</span><span style="color:#1f2328">:</span> <span style="color:#0a3069">&#34;6721a200281f4c1a8b9a3a84&#34;</span><span style="color:#1f2328">,</span>
+</span></span><span style="display:flex;"><span><span style="color:#0550ae">&#34;chunks&#34;</span><span style="color:#1f2328">:</span> <span style="color:#0a3069">&#34;2&#34;</span><span style="color:#1f2328">,</span>
+</span></span><span style="display:flex;"><span><span style="color:#0550ae">&#34;conversation_id&#34;</span><span style="color:#1f2328">:</span> <span style="color:#0a3069">&#34;67196c4fb25c8573993bab33&#34;</span><span style="color:#1f2328">,</span>
+</span></span><span style="display:flex;"><span><span style="color:#0550ae">&#34;history&#34;</span><span style="color:#1f2328">:</span> <span style="color:#0a3069">&#34;[{\&#34;prompt\&#34;:\&#34;Hi\&#34;,\&#34;response\&#34;:\&#34;Hello! How can I assist you today?\&#34;},{\&#34;prompt\&#34;:\&#34;summarize current context\&#34;}]&#34;</span><span style="color:#1f2328">,</span>
+</span></span><span style="display:flex;"><span><span style="color:#0550ae">&#34;isNoneDoc&#34;</span><span style="color:#1f2328">:</span> <span style="color:#cf222e">false</span><span style="color:#1f2328">,</span>
+</span></span><span style="display:flex;"><span><span style="color:#0550ae">&#34;prompt_id&#34;</span><span style="color:#1f2328">:</span> <span style="color:#0a3069">&#34;creative&#34;</span><span style="color:#1f2328">,</span>
+</span></span><span style="display:flex;"><span><span style="color:#0550ae">&#34;question&#34;</span><span style="color:#1f2328">:</span> <span style="color:#0a3069">&#34;summarize current context&#34;</span><span style="color:#1f2328">,</span>
+</span></span><span style="display:flex;"><span><span style="color:#0550ae">&#34;token_limit&#34;</span><span style="color:#1f2328">:</span> <span style="color:#0550ae">2000</span>
+</span></span><span style="display:flex;"><span><span style="color:#1f2328">}</span>
+</span></span></code></pre></div><table>
+  <thead>
+      <tr>
+          <th>Key</th>
+          <th>Data Type</th>
+          <th>Description</th>
+          <th>Use</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>active_docs</td>
+          <td>string</td>
+          <td>The ID of the documentation used to generate the answer.</td>
+          <td>Optional</td>
+      </tr>
+      <tr>
+          <td>chunks</td>
+          <td>string</td>
+          <td>The number of chunks used to process an answer.</td>
+          <td>Required</td>
+      </tr>
+      <tr>
+          <td>conversation_id</td>
+          <td>string</td>
+          <td>The ID of the conversation.</td>
+          <td>Optional</td>
+      </tr>
+      <tr>
+          <td>history</td>
+          <td>string</td>
+          <td>The conversation history.</td>
+          <td>Optional</td>
+      </tr>
+      <tr>
+          <td>isNoneDoc</td>
+          <td>Boolean</td>
+          <td>Flag indicating if no document is selected.</td>
+          <td>Optional</td>
+      </tr>
+      <tr>
+          <td>prompt_id</td>
+          <td>string</td>
+          <td>The prompt type used to generate responses. Values can be default, strict, or creative.</td>
+          <td>Optional</td>
+      </tr>
+      <tr>
+          <td>question</td>
+          <td>string</td>
+          <td>The user&rsquo;s question.</td>
+          <td>Required</td>
+      </tr>
+      <tr>
+          <td>token_limit</td>
+          <td>integer</td>
+          <td>The maximum number of token uses allowed for generating the answer.</td>
+          <td>Optional</td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>Sample Request</strong></p>
+<pre tabindex="0"><code class="language-curl" data-lang="curl">curl --location &#39;http://localhost:7091/stream&#39; \
+--header &#39;Content-Type: application/json&#39; \
+--data &#39;{
+&#34;active_docs&#34;: &#34;6721a200281f4c1a8b9a3a84&#34;,
+&#34;chunks&#34;: &#34;2&#34;,
+&#34;conversation_id&#34;: &#34;67196c4fb25c8573993bab33&#34;,
+&#34;history&#34;: &#34;[{\&#34;prompt\&#34;:\&#34;Hi\&#34;,\&#34;response\&#34;:\&#34;Hello! How can I assist you today?\&#34;},{\&#34;prompt\&#34;:\&#34;summarize current context\&#34;}]&#34;,
+&#34;isNoneDoc&#34;: false,
+&#34;prompt_id&#34;: &#34;creative&#34;,
+&#34;question&#34;: &#34;summarize current context&#34;,
+&#34;token_limit&#34;: 2000
+}&#39;
+</code></pre>
+      </section>
+      <footer class="post-footer">
+        <div class="post-pagination dt w-100 mt4 mb2">
+  
+  
+    <a class="prev dtc pr2 tl v-top fw6"
+    href="https://ebikatsudon.github.io/portfolio-site/collection/hugo-demo-site/">&larr; Demo Site for Hugo Installation</a>
+  
+  
+  
+    <a class="next dtc pl2 tr v-top fw6"
+    href="https://ebikatsudon.github.io/portfolio-site/collection/market-research-samples/">Market Research Writing Samples &rarr;</a>
+  
+</div>
+
+      </footer>
+    </article>
+    
+  </section>
+</main>
+
+<aside class="page-sidebar" role="complementary">
+                         
+ 
+
+
+
+
+
+
+
+
+
+
+
+  <img src="/portfolio-site/collection/featured-sidebar.jpg" class="db ma0">
+
+                         
+ 
+
+
+
+<div class="flex items-start sticky ph4 pb4 flex-row">
+  <div class="w-two-thirds w-50-l ph0">
+    <h2 class="mv3 f5 fw7 ttu tracked">
+      <a class="no-underline dim" href="/portfolio-site/collection/">Contents</a></h2>
+    <nav id="SectionTableOfContents" aria-label="SectionTableOfContents">
+        <ul>
+        
+          
+          
+          <li class="" hugo-nav="/portfolio-site/collection/technical-writing-samples/">
+            <a href="https://ebikatsudon.github.io/portfolio-site/collection/technical-writing-samples/">Technical Writing Samples</a></li>
+          
+          </li>
+        
+          
+          
+          <li class="" hugo-nav="/portfolio-site/collection/hugo-demo-site/">
+            <a href="https://ebikatsudon.github.io/portfolio-site/collection/hugo-demo-site/">Demo Site for Hugo Installation</a></li>
+          
+          </li>
+        
+          
+          
+          <li class="active" hugo-nav="/portfolio-site/collection/docsgpt-api-documentation/">
+            <a href="https://ebikatsudon.github.io/portfolio-site/collection/docsgpt-api-documentation/">API Documentation for DocsGPT</a></li>
+          
+          </li>
+        
+          
+          
+          
+          <details  class="">
+            <summary class="" hugo-nav="/portfolio-site/collection/tutorials/"><a href="https://ebikatsudon.github.io/portfolio-site/collection/tutorials/">Tutorials</a></summary>
+            
+              
+              <li class="" hugo-nav="/portfolio-site/collection/tutorials/noob-guide/"><a href="https://ebikatsudon.github.io/portfolio-site/collection/tutorials/noob-guide/">Total Noob Guide to Forking a GitHub Repository Wiki</a></li>
+            
+              
+              <li class="" hugo-nav="/portfolio-site/collection/tutorials/ikea-pahl-instructions/"><a href="https://ebikatsudon.github.io/portfolio-site/collection/tutorials/ikea-pahl-instructions/">IKEA Pahl Assembly Instructions</a></li>
+            
+              
+              <li class="" hugo-nav="/portfolio-site/collection/tutorials/pb-and-j/"><a href="https://ebikatsudon.github.io/portfolio-site/collection/tutorials/pb-and-j/">How to Make a Peanut Butter and Jelly Sandwich</a></li>
+            
+          </details>
+          
+          </li>
+        
+          
+          
+          <li class="" hugo-nav="/portfolio-site/collection/market-research-samples/">
+            <a href="https://ebikatsudon.github.io/portfolio-site/collection/market-research-samples/">Market Research Writing Samples</a></li>
+          
+          </li>
+        
+        </ul>
+    </nav>
+  </div>
+  <details id="PageTableOfContents">
+    <summary><h2 class="mv0 f5 fw7 ttu tracked dib">On this page<h2></summary>
+    <div class="pl2 pr0 mh0">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#1-post-apianswer">1. POST /api/answer</a></li>
+    <li><a href="#2-post-apidocs_check">2. POST /api/docs_check</a></li>
+    <li><a href="#3-get-apicombine">3. GET /api/combine</a></li>
+    <li><a href="#4-post-apiupload">4. POST /api/upload</a></li>
+    <li><a href="#5-get-apitask_status">5. GET /api/task_status</a></li>
+    <li><a href="#6-get-apidelete_old">6. GET /api/delete_old</a></li>
+    <li><a href="#7-get-apiget_api_keys">7. GET /api/get_api_keys</a></li>
+    <li><a href="#8-post-apicreate_api_key">8. POST /api/create_api_key</a></li>
+    <li><a href="#9-post-apidelete_api_key">9. POST /api/delete_api_key</a></li>
+    <li><a href="#10-get-apiget_conversations">10. GET /api/get_conversations</a></li>
+    <li><a href="#11-post-apidelete_conversation">11. POST /api/delete_conversation</a></li>
+    <li><a href="#12-post-stream">12. POST /stream</a></li>
+  </ul>
+</nav>
+    </div>
+  </details>
+  
+</div>
+
+</aside>
+
+<footer class="site-footer pv4 bt b--transparent ph5" role="contentinfo">
+  <nav class="db dt-l w-100">
+    <p class="site-copyright f7 db dtc-l v-mid w-100 w-33-l tc tl-l pv2 pv0-l mv0 lh-copy">
+      ebikatsudon
+      <span class="middot-divider"></span>
+      Made with <span xmlns:dct="http://purl.org/dc/terms/" property="dct:title"><a xmlns:dct="http://purl.org/dc/terms/" href="https://github.com/hugo-apero/" rel="dct:source">Hugo Apéro</a></span>.
+      <br />
+      
+Based on <span xmlns:dct="http://purl.org/dc/terms/" property="dct:title"><a xmlns:dct="http://purl.org/dc/terms/" href="https://github.com/formspree/blogophonic-hugo" rel="dct:source">Blogophonic</a></span> by <a xmlns:cc="http://creativecommons.org/ns#" href="https://formspree.io" property="cc:attributionName" rel="cc:attributionURL">Formspree</a>.
+    </p>
+    
+    <div class="site-social-links db dtc-l v-mid w-100 w-33-l tc pv2 pv0-l mv0">
+      <div class="social-icon-links" aria-hidden="true">
+  
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <a class="link dib h1 w1 ml0 mr2 f6 o-90 glow" href="https://github.com/ebikatsudon/" title="github" target="_blank" rel="me noopener">
+      <i class="fab fa-github fa-lg fa-fw"></i>
+    </a>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <a class="link dib h1 w1 ml0 mr2 f6 o-90 glow" href="https://linkedin.com/" title="linkedin" target="_blank" rel="me noopener">
+      <i class="fab fa-linkedin fa-lg fa-fw"></i>
+    </a>
+  
+</div>
+
+    </div>
+    
+    <div class="site-links f6 db dtc-l v-mid w-100 w-67-l tc tr-l pv2 pv0-l mv0">
+      
+    </div>
+  </nav>
+  
+    <script>
+
+    var i, text, code, codes = document.getElementsByTagName('code');
+    for (let i = 0; i < codes.length;) {
+      code = codes[i];
+      if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+        text = code.textContent;
+        if (/^\$[^$]/.test(text) && /[^$]\$$/.test(text)) {
+          text = text.replace(/^\$/, '\\(').replace(/\$$/, '\\)');
+          code.textContent = text;
+        }
+        if (/^\\\((.|\s)+\\\)$/.test(text) ||
+            /^\\\[(.|\s)+\\\]$/.test(text) ||
+            /^\$(.|\s)+\$$/.test(text) ||
+            /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+          code.outerHTML = code.innerHTML;  
+          continue;
+        }
+      }
+      i++;
+    }
+</script>
+
+  
+    
+    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.13/dist/katex.min.css" integrity="sha384-RZU/ijkSsFbcmivfdRBQDtwuwVqK7GMOw6IMvKyeWL2K5UAlyp6WonmB8m7Jd0Hn" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.13/dist/katex.min.js" integrity="sha384-pK1WpvzWVBQiP0/GjnvRxV4mOb0oxFuyRxJlk6vVw146n3egcN5C925NCP7a7BY8" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.13/dist/contrib/auto-render.min.js" integrity="sha384-vZTG03m+2yp6N6BNi5iM4rW4oIwk5DfcNdFfxkk9ZWpDriOkXX8voJBFrAO7MpVl" crossorigin="anonymous" onload="renderMathInElement(document.body);"></script>
+
+
+
+    
+  
+  
+</footer>
+
+      </div>
+    </body>
+</html>

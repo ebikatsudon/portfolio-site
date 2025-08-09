@@ -1,6 +1,6 @@
 ---
 title: "Market Research Writing Samples"
-weight: 3
+weight: 4
 subtitle: "Data-driven and Analytic Articles"
 excerpt: "Links to various non-technical articles I've written in the past. These articles incorporate consumer research data and aim to inform restaurants and other food and beverage operators of growing trends that could help their businesses."
 draft: false
