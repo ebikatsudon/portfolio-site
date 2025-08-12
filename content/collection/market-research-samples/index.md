@@ -8,6 +8,10 @@ draft: false
 
 ## SmartBrief
 
+### [The Role of Food in Healthcare](https://www.smartbrief.com/original/role-food-health-care)
+
+Written during the rise of the COVID-19 pandemic, this article addresses the challenges faced by foodservice operators in the healthcare industry and explores what patients actually want when it comes to food options in healthcare facilities.
+
 ### [Take These Trends Out to the Ball Game](https://www.smartbrief.com/original/take-these-trends-out-ball-game)
 
 This article explores how stadium food has gone beyond the age-old classics, with offerings now encompassing a wide range of cuisines and dietary preferences.
