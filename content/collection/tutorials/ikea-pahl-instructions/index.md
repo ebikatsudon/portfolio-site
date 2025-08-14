@@ -2,7 +2,7 @@
 draft: false
 title: "IKEA Pahl Assembly Instructions"
 description: ''
-weight: 2
+weight: 3
 ---
 
 This manual is a written version of the assembly instructions for the IKEA Pahl desk, article number `491.289.45`.

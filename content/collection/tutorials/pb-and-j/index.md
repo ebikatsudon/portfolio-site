@@ -2,7 +2,7 @@
 draft: false
 title: "How to Make a Peanut Butter and Jelly Sandwich"
 description: ''
-weight: 3
+weight: 4
 ---
 
 **Peanut butter and jelly** (PB&J) sandwiches are a popular snack for all ages. There are endless variations of this timeless classic, but the core process for assembling a PB&J is the same. Below, we'll cover how to make a basic PB&J sandwich.
