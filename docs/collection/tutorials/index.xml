@@ -17,6 +17,13 @@
       <description>&lt;p&gt;Have you ever wanted to contribute to a project&amp;rsquo;s documentation, but found that it&amp;rsquo;s only available through a wiki on Github?&lt;/p&gt;&#xA;&lt;p&gt;Although Github does allow direct editing of wikis (in fact, pull requests aren&amp;rsquo;t supported for wiki changes), you can only do so if you have write access to the repository. While some projects allow anyone on Github to make wiki changes, others require you to be marked as a collaborator. However, there IS a way to make changes to the wiki even if you don&amp;rsquo;t have write access permissions.&lt;/p&gt;</description>
     </item>
     <item>
+      <title>How to Play Minecraft Java Edition with a Controller</title>
+      <link>https://ebikatsudon.github.io/portfolio-site/collection/tutorials/minecraft-with-controller/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://ebikatsudon.github.io/portfolio-site/collection/tutorials/minecraft-with-controller/</guid>
+      <description>&lt;p&gt;If you&amp;rsquo;ve ever played Minecraft you probably know what it&amp;rsquo;s like to have your hand cramp up after spending hours mining for diamonds and other goodies. But did you know you can actually avoid putting your fingers and wrists through all that pain by using a controller instead of the usual keyboard and mouse? While Minecraft does not natively support controller inputs (at least as of current patch 1.21.5), players can still use a controller to play Minecraft as long as they have a Steam account. By using Steam Input players can map keyboard and mouse inputs to their controller buttons, allowing them to use a controller even with non-Steam games like Minecraft.&lt;/p&gt;</description>
+    </item>
+    <item>
       <title>IKEA Pahl Assembly Instructions</title>
       <link>https://ebikatsudon.github.io/portfolio-site/collection/tutorials/ikea-pahl-instructions/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
